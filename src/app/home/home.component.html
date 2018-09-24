@@ -1,0 +1,38 @@
+<h1> Blood Bank</h1>
+
+
+
+<main class="main-area">
+
+    <div class="centered">
+
+        <ul class="cards">
+
+            <li *ngFor="let item of Blood" dragula="${ dragable(item) ? 'VAMPIRES':''}" class="card">
+
+                <div class="card-content">
+                    <div class="drag-block" style="background:green" [ngDraggable]="dragable(item)"><span> {{item.name}} </span> </div>
+
+                </div>
+                <!-- .card-content -->
+            </li>
+            <!-- .card -->
+
+        </ul>
+        <!-- .cards -->
+
+    </div>
+    <!-- .centered -->
+
+</main>
+<div class="input">
+    <div>
+        Blood required <input (keyup)="bloodType($event)"><br> Number of units <input (keyup)="bloodUnit($event)">
+    </div>
+    <div class="bucket" dragula="VAMPIRES">
+
+    </div>
+</div>
+
+<!-- Disable -->
+<!--<div class="drag-block" [ngDraggable]="false"><span> Disabled </span> </div>-->
